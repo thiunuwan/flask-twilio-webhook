@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: Greeting Service API
+  description: API for receiving messages and sending responses
+  version: 1.0.0
+paths:
+  /message:
+    post:
+      summary: Respond to a message
+      description: Receives a message and sends a thank you response.
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                Body:
+                  type: string
+                  example: 'Hello'
+      responses:
+        '200':
+          description: Thank you response message
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Thank you for your message! A member of our team will be in touch with you soon.'
+  /hello:
+    get:
+      summary: Greeting endpoint
+      description: Returns a simple greeting message.
+      responses:
+        '200':
+          description: A greeting message
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Hello! Welcome!'
