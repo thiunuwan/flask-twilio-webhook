@@ -12,15 +12,12 @@ endpoints:
     type: REST
     # +optional Network level visibility of this endpoint. Defaults to Public
     # Accepted values: Project|Organization|Public.
-    networkVisibility: Project
+    networkVisibility:  Public
     # +optional Context (base path) of the API that is exposed via this endpoint.
     # This is mandatory if the endpoint type is set to REST or GraphQL.
     context: /api
     # +optional Path to the schema definition file. Defaults to wild card route if not provided
-    # This is only applicable to REST endpoint types.
-    # The path should be relative to the docker context.
-    schemaFilePath: twilio_openapi.yaml
-
+  
     # +required List of methods supported by this endpoint
     methods:
       - path: /message
