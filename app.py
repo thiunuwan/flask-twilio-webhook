@@ -14,13 +14,13 @@ def respond(message):
     response.message(message)
     return str(response)
 
-@app.route('/message', methods=['POST'])
+@app.route('api/v1/message', methods=['POST'])
 def reply():
     message = request.form.get('Body').lower()
     if message:
         return respond(f'Thank you for your message! A member of our team will be in touch with you soon.')
 
-@app.route('/hello', methods=['GET'])
+@app.route('api/v1/hello', methods=['GET'])
 def hello():
     return 'Hello! Welcome !'
 

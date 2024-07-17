@@ -1,9 +1,23 @@
 openapi: 3.0.3
 info:
-  title: Greeting Service API
+  title: Twillio-test Service API
   description: API for receiving messages and sending responses
   version: 1.0.0
+servers:
+  - url: http://localhost:5000
 paths:
+  /hello:
+    get:
+      summary: Greeting endpoint
+      description: Returns a simple greeting message.
+      responses:
+        '200':
+          description: A greeting message
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Hello! Welcome!'
   /message:
     post:
       summary: Respond to a message
@@ -25,15 +39,3 @@ paths:
               schema:
                 type: string
                 example: 'Thank you for your message! A member of our team will be in touch with you soon.'
-  /hello:
-    get:
-      summary: Greeting endpoint
-      description: Returns a simple greeting message.
-      responses:
-        '200':
-          description: A greeting message
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: 'Hello! Welcome!'
