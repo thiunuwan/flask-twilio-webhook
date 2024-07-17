@@ -21,7 +21,7 @@ app = Flask(__name__)
 #     if message:
 #         return respond(f'Thank you for your message! A member of our team will be in touch with you soon.')
 
-@app.route('api/v1/hello', methods=['GET'])
+@app.route('/api/hello', methods=['GET'])
 def hello():
     return 'Hello! Welcome !'
 
