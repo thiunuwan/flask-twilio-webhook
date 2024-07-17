@@ -19,6 +19,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code
 COPY . .
 
+# Switch to the new user
+USER 10016
+
 # Expose the Flask port
 EXPOSE 5000
 
