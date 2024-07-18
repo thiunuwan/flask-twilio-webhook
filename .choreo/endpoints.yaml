@@ -17,7 +17,7 @@ endpoints:
   #   # This is mandatory if the endpoint type is set to REST or GraphQL.
   #   context: /message
   
-  - name: Hello Service
+  - name: Message Service
     # +required Numeric port value that gets exposed via this endpoint
     port: 5000
     # +required Type of the traffic this endpoint is accepting. Example: REST, GraphQL, etc.

@@ -5,21 +5,21 @@ from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
 app = Flask(__name__)
 
-# load_dotenv()
+load_dotenv()
 
-# app = Flask(__name__)
-# client = Client(os.getenv('TWILIO_ACCOUNT_SID'), os.getenv('TWILIO_AUTH_TOKEN'))
+app = Flask(__name__)
+client = Client(os.getenv('TWILIO_ACCOUNT_SID'), os.getenv('TWILIO_AUTH_TOKEN'))
 
-# def respond(message):
-#     response = MessagingResponse()
-#     response.message(message)
-#     return str(response)
+def respond(message):
+    response = MessagingResponse()
+    response.message(message)
+    return str(response)
 
-# @app.route('api/v1/message', methods=['POST'])
-# def reply():
-#     message = request.form.get('Body').lower()
-#     if message:
-#         return respond(f'Thank you for your message! A member of our team will be in touch with you soon.')
+@app.route('/api/message', methods=['POST'])
+def reply():
+    message = request.form.get('Body').lower()
+    if message:
+        return respond(f'Thank you for your message! A member of our team will be in touch with you soon.')
 
 @app.route('/api/hello', methods=['GET'])
 def hello():
