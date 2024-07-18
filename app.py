@@ -7,9 +7,6 @@ app = Flask(__name__)
 load_dotenv()
 client = Client()
 
-# app = Flask(__name__)
-# client = Client(os.getenv('TWILIO_ACCOUNT_SID'), os.getenv('TWILIO_AUTH_TOKEN'))
-
 def respond(message):
     response = MessagingResponse()
     response.message(message)
@@ -23,7 +20,8 @@ def reply():
 
 @app.route('/api/hello', methods=['GET'])
 def hello():
-    return 'Hello! Welcome !'
+    return 'Hello there..!'
 
 if __name__ == "__main__":
     app.run()
+    
